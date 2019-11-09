@@ -27,6 +27,8 @@ exprfunc expr\(({intlit}|{fltlit})\)
 sqrtfunc    sqrt\(({intlit}|{fltlit})\)
 array   {id}\[({intlit}?|{id}?)\]
 whitespace [ ]|[ \t]
+compop  [=><]
+compops [!=]?{compop}?{compop}
 
 %%
 {whitespace} {tokenName = "WHITESPACE"; return WHITESPACE; cout << "WHITESPACE"; }
@@ -67,6 +69,7 @@ whitespace [ ]|[ \t]
 {sqrtfunc}  { tokenName = "SQRTFUNC"; return SQRTFUNC; cout << "SQRTFUNC"; }
 {array}     { tokenName = "ARRAY"; return ARRAY; cout << "ARRAY"; }
 {id}        { tokenName = "ID"; return ID; cout << "ID"; }
+{compops}   { tokenName = "COMPOP"; return COMPOP; cout << "COMPOP"; }
 
 \n { }
 .		{ cout << "Error: invalid symbol '" << YYText()[0] << "' encountered at line " << yylineno << endl;}

@@ -52,3 +52,5 @@ extern string tokenName;
 #define EXPRFUNC	901		//DONE
 #define SQRTFUNC	902		//DONE
 #define ARRAY		995		//DONE
+
+#define COMPOP		509

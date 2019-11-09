@@ -2,6 +2,7 @@
 // Skeleton source code by Glenn Fabia 
 // Handout for ICST252 Compiler Design and Implementation
 // 2nd Semester S/Y 2016 -2017
+// Edited by Kevin Baldo for ICST252, 1st Semester S/Y 2019-2020
 //
 // This is the driver program for cmn compiler
 
@@ -50,7 +51,7 @@ int main (int argc, char* argv[]){
 		}
 		else
 			if (token == 5){
-
+				//ignore whitespaces
 			}
 			else cout << token << "	" << tokenName <<  "	 " << lexer->YYText()  << endl;
 		token = lexer->yylex();
